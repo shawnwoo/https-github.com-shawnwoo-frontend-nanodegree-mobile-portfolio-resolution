@@ -1,4 +1,4 @@
-##Resolution of Website Performance Optimization portfolio project
+##Solution of Website Performance Optimization portfolio project
 
 ####Setup the environment
 1. Install gulp by $npm install --global gulp-cli
