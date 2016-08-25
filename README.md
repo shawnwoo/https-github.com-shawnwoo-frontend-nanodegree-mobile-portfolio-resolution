@@ -1,14 +1,35 @@
 ##Solution of Website Performance Optimization portfolio project
 
 ####Setup the environment
-1. Install gulp by $npm install --global gulp-cli
-2. Install gulp in your project devDependencies by $npm install --save-dev gulp
-3. Install gulp plugins by npm install --save-dev gulp-cssmin gulp-htmlmin gulp-inline gulp-minify-inline gulp-uglify gulp-imagemin
-4. Run gulp server by command: gulp
+1. Install gulp
+  ```bash
+  $npm install --global gulp-cli
+  ```
+2. Install gulp in your project devDependencies
+  ```bash
+  $npm install --save-dev gulp
+  ```
+3. Install gulp plugins
+  ```bash
+  $npm install --save-dev gulp-cssmin gulp-htmlmin gulp-inline gulp-minify-inline gulp-uglify gulp-imagemin
+  ```
+4. Run gulp server by command:
+  ```bash
+  $gulp
+  ```
+5. Gulp will generate a optimized version of the website in dist directory
 
 ####Directoires
---all source code is in src
---all gulp optimized code is in dist
+*all source code is in src
+*all gulp optimized code is in dist
+
+####Solutions
+#####Part1: Optimize PageSpeed Insights score for index.html
+1. Host the website on github.io then analyze the webpages on Google PageSpeed tool
+2. The first feedback from the tool is images need to be compressed. Solution: Use gulp-imagemin to minify the images.
+3. The second feedback is google fonts and google analytics tool is blocking the rendering. Solution: Comment out google fonts and move the google analytics scripts to end of the page to unblock rendering.
+4. Rerun PageSpeed tool, the score is over 90 now.
+
 
 ## Website Performance Optimization portfolio project
 
