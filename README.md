@@ -1,4 +1,4 @@
-##Solution of Website Performance Optimization portfolio project
+##Solutions of Website Performance Optimization portfolio project
 
 ####Setup the environment
 1. Install gulp
@@ -28,7 +28,10 @@
 1. Host the website on github.io then analyze the webpages on Google PageSpeed tool
 2. The first feedback from the tool is images need to be compressed. Solution: Use gulp-imagemin to minify the images.
 3. The second feedback is google fonts and google analytics tool is blocking the rendering. Solution: Comment out google fonts and move the google analytics scripts to end of the page to unblock rendering.
-4. Rerun PageSpeed tool, the score is over 90 now.
+4. The third feedback is css needs to be inlined. Solution: Change css to inline.
+5. Rerun PageSpeed tool, the score is over 90 now.
+
+#####Part2: Optimize Frames per Second in pizza.html
 
 
 ## Website Performance Optimization portfolio project
