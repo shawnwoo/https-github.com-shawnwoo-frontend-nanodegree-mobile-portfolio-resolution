@@ -32,7 +32,9 @@
 5. Rerun PageSpeed tool, the score is over 90 now.
 
 #####Part2: Optimize Frames per Second in pizza.html
-
+1. Take out nested functions from resizePizzas function
+2. Make document selectors as variable instead of calling them all the time.
+3.
 
 ## Website Performance Optimization portfolio project
 
