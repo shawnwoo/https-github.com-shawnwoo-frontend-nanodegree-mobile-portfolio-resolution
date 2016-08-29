@@ -94,6 +94,8 @@ gulp.task('img', function() {
   return gulp.src(config.images.source)
   .pipe(imageResize({
     width : 340,
+    crop: true,
+    upscale : false
     }))
   .pipe(gulp.dest(config.build + config.images.target));
 });
