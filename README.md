@@ -1,6 +1,6 @@
-##Solutions of Website Performance Optimization portfolio project
+## Solutions of Website Performance Optimization portfolio project
 
-####Setup the environment
+#### Setup the environment
 1. Install gulp
   ```bash
   $npm install --global gulp-cli
@@ -11,7 +11,7 @@
   ```
 3. Install gulp plugins
   ```bash
-  $npm install --save-dev gulp-cssmin gulp-htmlmin gulp-inline gulp-minify-inline gulp-uglify gulp-imagemin
+  $npm install --save-dev gulp-cssmin gulp-htmlmin gulp-uglify gulp-imagemin
   ```
 4. Run gulp server by command:
   ```bash
@@ -19,19 +19,19 @@
   ```
 5. Gulp will generate a optimized version of the website in dist directory
 
-####Directoires
+#### Directoires
 *all source code is in src
 *all gulp optimized code is in dist
 
-####Solutions
-#####Part1: Optimize PageSpeed Insights score for index.html
+#### Solutions
+##### Part1: Optimize PageSpeed Insights score for index.html
 1. Host the website on github.io then analyze the webpages on Google PageSpeed tool
 2. The first feedback from the tool is images need to be compressed. Solution: Use gulp-imagemin to minify the images.
 3. The second feedback is google fonts and google analytics tool is blocking the rendering. Solution: Comment out google fonts and move the google analytics scripts to end of the page to unblock rendering.
 4. The third feedback is css needs to be inlined. Solution: Change css to inline.
 5. Rerun PageSpeed tool, the score is over 90 now.
 
-#####Part2: Optimize Frames per Second in pizza.html
+##### Part2: Optimize Frames per Second in pizza.html
 1. Take out nested functions from resizePizzas function
 2. Make document selectors as variable instead of calling them all the time.
 3. Refectored code for background animation part. Details pls see the comments in code.

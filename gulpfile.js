@@ -1,10 +1,9 @@
 const gulp = require('gulp');
-const imagemin = require('gulp-imagemin');
-      cssmin    = require('gulp-cssmin'),
+const cssmin    = require('gulp-cssmin'),
       htmlmin   = require('gulp-htmlmin'),
-      inline    = require('gulp-inline'),
-      minline   = require('gulp-minify-inline'),
-      uglify    = require('gulp-uglify');
+      uglify    = require('gulp-uglify'),
+      imageResize = require('gulp-image-resize'),
+      imagemin = require('gulp-imagemin');
 
 
 var config = {
@@ -55,9 +54,7 @@ gulp.task('views-css', function () {
 
 gulp.task('views-html', function () {
   return gulp.src(config.views.html.source)
-    .pipe(inline({ base: 'views/'}))
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(minline())
   .pipe(gulp.dest(config.build + config.views.html.target))
 })
 
@@ -69,8 +66,8 @@ gulp.task('views-js', function () {
 
 gulp.task('views-img', function() {
   return gulp.src(config.views.images.source)
-    .pipe(imagemin({
-      progressive: true,
+    .pipe(imageResize({
+    width : 340,
     }))
   .pipe(gulp.dest(config.build + config.views.images.target));
 });
@@ -83,9 +80,7 @@ gulp.task('css', function () {
 
 gulp.task('html', function () {
   return gulp.src(config.html.source)
-  .pipe(inline())
   .pipe(htmlmin({collapseWhitespace: true}))
-  .pipe(minline())
   .pipe(gulp.dest(config.build + config.html.target))
 });
 
@@ -97,11 +92,12 @@ gulp.task('js', function () {
 
 gulp.task('img', function() {
   return gulp.src(config.images.source)
-  .pipe(imagemin({
-    progressive: true,
-  }))
+  .pipe(imageResize({
+    width : 340,
+    }))
   .pipe(gulp.dest(config.build + config.images.target));
 });
+
 
 gulp.task('build', ['html','css','js','img','views-html','views-css','views-js','views-img']);
 
