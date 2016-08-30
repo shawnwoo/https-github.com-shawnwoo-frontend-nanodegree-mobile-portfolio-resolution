@@ -2,6 +2,8 @@ const gulp = require('gulp');
 const cssmin    = require('gulp-cssmin'),
       htmlmin   = require('gulp-htmlmin'),
       uglify    = require('gulp-uglify'),
+      inline    = require('gulp-inline'),
+      minline   = require('gulp-minify-inline'),
       imageResize = require('gulp-image-resize'),
       imagemin = require('gulp-imagemin');
 
@@ -80,7 +82,11 @@ gulp.task('css', function () {
 
 gulp.task('html', function () {
   return gulp.src(config.html.source)
+  .pipe(inline({
+    disabledTypes: ['svg', 'img', 'js'], // Only inline css files
+    }))
   .pipe(htmlmin({collapseWhitespace: true}))
+  .pipe(minline())
   .pipe(gulp.dest(config.build + config.html.target))
 });
 

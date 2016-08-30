@@ -549,8 +549,8 @@ document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
   var width = window.innerWidth;
   var height = window.innerHeight;
-  var rows = Math.ceil(width/s);
-  var cols = Math.ceil(height/s);
+  var rows = Math.ceil(height/s);
+  var cols = Math.ceil(width/s);
   var totalPizzaNumber = rows*cols;
   var elem;
 
